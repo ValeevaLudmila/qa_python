@@ -96,12 +96,8 @@ class TestBooksCollector:
     def test_get_list_of_favorites_books(self):
         collector = BooksCollector()
         collector.add_new_book('Дон Кихот')
-        collector.set_book_genre('Дон Кихот', 'Комедии')
         collector.add_book_in_favorites('Дон Кихот')
-        favorites = collector.get_list_of_favorites_books()
-        assert favorites == ['Дон Кихот']
-        assert len(collector.favorites) == 1
-        assert 'Дон Кихот' in favorites
+        assert collector.get_list_of_favorites_books() == ['Дон Кихот']
 
     # у добавленной книги нет жанра
     def test_add_new_book_adding_a_book_without_a_genre(self):
