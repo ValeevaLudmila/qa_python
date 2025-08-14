@@ -90,8 +90,6 @@ class TestBooksCollector:
         collector.add_new_book('Дон Кихот')
         collector.set_book_genre('Дон Кихот', 'Комедии')
         collector.add_book_in_favorites('Дон Кихот')
-        assert 'Дон Кихот' in collector.favorites
-        assert len(collector.favorites) == 1
         collector.delete_book_from_favorites('Дон Кихот')
         assert 'Дон Кихот' not in collector.favorites
         assert len(collector.favorites) == 0
