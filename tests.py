@@ -42,8 +42,12 @@ class TestBooksCollector:
     def test_get_books_with_specific_genre_display_a_list_of_books_with_the_comedy_genre(self):
         collector = BooksCollector()
         collector.add_new_book('Дон Кихот')
+        collector.add_new_book('Двенадцать стульев')
+        collector.add_new_book('Шерлок Холмс')
         collector.set_book_genre('Дон Кихот', 'Комедии')
-        assert collector.get_books_with_specific_genre('Комедии') == ['Дон Кихот']
+        collector.set_book_genre('Двенадцать стульев', 'Комедии')
+        collector.set_book_genre('Шерлок Холмс', 'Детективы')
+        assert collector.get_books_with_specific_genre('Комедии') == ['Дон Кихот', 'Двенадцать стульев']
 
     # получаем словарь books_genre
     def test_get_books_genre_output_a_dictionary(self):
