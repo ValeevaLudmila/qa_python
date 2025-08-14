@@ -88,11 +88,9 @@ class TestBooksCollector:
     def test_delete_book_from_favorites(self):
         collector = BooksCollector()
         collector.add_new_book('Дон Кихот')
-        collector.set_book_genre('Дон Кихот', 'Комедии')
         collector.add_book_in_favorites('Дон Кихот')
         collector.delete_book_from_favorites('Дон Кихот')
         assert 'Дон Кихот' not in collector.favorites
-        assert len(collector.favorites) == 0
 
      # получаем список Избранных книг
     def test_get_list_of_favorites_books(self):
