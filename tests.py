@@ -80,7 +80,6 @@ class TestBooksCollector:
     def test_add_book_in_favorites_adding_book_to_favorites(self):
         collector = BooksCollector()
         collector.add_new_book('Дон Кихот')
-        collector.set_book_genre('Дон Кихот', 'Комедии')
         collector.add_book_in_favorites('Дон Кихот')
         assert 'Дон Кихот' in collector.favorites
         assert len(collector.favorites) == 1
